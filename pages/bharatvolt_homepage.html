@@ -633,6 +633,225 @@
                 }
             });
         });
+
+        // ====================================================================
+        // SCROLL-TRIGGERED CONNECTION ANIMATION
+        // + and - terminals move together and form BharatVolt on scroll
+        // ====================================================================
+
+        // Wait for DOM to be ready
+        window.addEventListener('DOMContentLoaded', () => {
+            // Create animated connection visual overlay
+            const heroSection = document.querySelector('#home');
+            
+            if (heroSection) {
+                // Add scroll animation observer
+                const observerOptions = {
+                    threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+                    rootMargin: '0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        // Get scroll progress (0 to 1)
+                        const scrollProgress = entry.intersectionRatio;
+                        
+                        // Animate terminal cards based on scroll
+                        animateTerminals(scrollProgress);
+                        
+                        // Animate connection line
+                        animateConnectionLine(scrollProgress);
+                        
+                        // Animate BharatVolt logo appearance
+                        animateBharatVoltLogo(scrollProgress);
+                    });
+                }, observerOptions);
+
+                observer.observe(heroSection);
+
+                // Add scroll event for smooth transitions
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        updateAnimationOnScroll();
+                    }, 10);
+                });
+            }
+
+            function animateTerminals(progress) {
+                // Get terminal cards
+                const manufacturersCard = document.querySelector('#home .lg\\:grid-cols-3 > div:first-child');
+                const labsCard = document.querySelector('#home .lg\\:grid-cols-3 > div:last-child');
+                const centerConnection = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2)');
+
+                if (!manufacturersCard || !labsCard || !centerConnection) return;
+
+                // Calculate movement (terminals move closer as you scroll)
+                const maxMove = 50; // pixels to move
+                const moveAmount = Math.min(progress * maxMove * 2, maxMove);
+
+                // Move manufacturers card to the right
+                manufacturersCard.style.transform = `translateX(${moveAmount}px) scale(${1 + progress * 0.05})`;
+                
+                // Move labs card to the left
+                labsCard.style.transform = `translateX(-${moveAmount}px) scale(${1 + progress * 0.05})`;
+                
+                // Scale up center connection
+                centerConnection.style.transform = `scale(${1 + progress * 0.2})`;
+                
+                // Add glow effect as they get closer
+                const glowIntensity = progress * 30;
+                manufacturersCard.style.boxShadow = `0 0 ${glowIntensity}px rgba(14, 165, 233, ${progress * 0.6})`;
+                labsCard.style.boxShadow = `0 0 ${glowIntensity}px rgba(16, 185, 129, ${progress * 0.6})`;
+                centerConnection.style.boxShadow = `0 0 ${glowIntensity * 1.5}px rgba(249, 115, 22, ${progress * 0.8})`;
+
+                // Add smooth transitions
+                manufacturersCard.style.transition = 'all 0.3s ease-out';
+                labsCard.style.transition = 'all 0.3s ease-out';
+                centerConnection.style.transition = 'all 0.3s ease-out';
+            }
+
+            function animateConnectionLine(progress) {
+                // Get connection line
+                const connectionLine = document.querySelector('#home .lg\\:grid-cols-3 .absolute.inset-0 .w-full.h-1');
+                
+                if (!connectionLine) return;
+
+                // Animate width and opacity
+                connectionLine.style.width = `${progress * 100}%`;
+                connectionLine.style.opacity = progress;
+                
+                // Pulse faster as progress increases
+                const pulseSpeed = Math.max(0.5, 2 - progress * 1.5);
+                connectionLine.style.animationDuration = `${pulseSpeed}s`;
+            }
+
+            function animateBharatVoltLogo(progress) {
+                // Get BharatVolt center logo
+                const bharatVoltLogo = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2) > div:first-child');
+                
+                if (!bharatVoltLogo) return;
+
+                // Fade in and scale up as terminals come together
+                if (progress > 0.5) {
+                    const fadeProgress = (progress - 0.5) * 2; // 0 to 1 in second half
+                    bharatVoltLogo.style.opacity = fadeProgress;
+                    bharatVoltLogo.style.transform = `scale(${0.8 + fadeProgress * 0.4}) rotate(${fadeProgress * 360}deg)`;
+                } else {
+                    bharatVoltLogo.style.opacity = 0.3;
+                    bharatVoltLogo.style.transform = 'scale(0.8)';
+                }
+
+                bharatVoltLogo.style.transition = 'all 0.4s ease-out';
+            }
+
+            function updateAnimationOnScroll() {
+                const heroSection = document.querySelector('#home');
+                if (!heroSection) return;
+
+                const rect = heroSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Calculate how much of hero is visible (0 to 1)
+                let progress = 0;
+                
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    // Hero is visible
+                    const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+                    progress = visibleHeight / rect.height;
+                }
+
+                // Apply animations
+                animateTerminals(progress);
+                animateConnectionLine(progress);
+                animateBharatVoltLogo(progress);
+            }
+
+            // Add particle animation between terminals
+            function createFlowingParticles() {
+                const connectionArea = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2)');
+                if (!connectionArea) return;
+
+                // Create particle container if it doesn't exist
+                let particleContainer = connectionArea.querySelector('.particle-container');
+                if (!particleContainer) {
+                    particleContainer = document.createElement('div');
+                    particleContainer.className = 'particle-container absolute inset-0 pointer-events-none';
+                    connectionArea.appendChild(particleContainer);
+                }
+
+                // Create particles that flow from left to right
+                setInterval(() => {
+                    const particle = document.createElement('div');
+                    particle.className = 'absolute w-2 h-2 rounded-full';
+                    particle.style.background = `linear-gradient(135deg, #0EA5E9, #10B981)`;
+                    particle.style.left = '0%';
+                    particle.style.top = `${Math.random() * 100}%`;
+                    particle.style.opacity = '0.8';
+                    particle.style.animation = 'flowParticle 2s linear forwards';
+                    
+                    particleContainer.appendChild(particle);
+
+                    // Remove particle after animation
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 2000);
+                }, 300); // New particle every 300ms
+            }
+
+            // Add CSS animation for particles
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes flowParticle {
+                    0% {
+                        transform: translateX(0) scale(0);
+                        opacity: 0;
+                    }
+                    20% {
+                        opacity: 0.8;
+                        transform: translateX(20%) scale(1);
+                    }
+                    80% {
+                        opacity: 0.8;
+                        transform: translateX(80%) scale(1);
+                    }
+                    100% {
+                        transform: translateX(100%) scale(0);
+                        opacity: 0;
+                    }
+                }
+
+                /* Glow pulse animation for terminals */
+                @keyframes terminalGlow {
+                    0%, 100% {
+                        filter: brightness(1);
+                    }
+                    50% {
+                        filter: brightness(1.2);
+                    }
+                }
+
+                /* Connection line pulse */
+                @keyframes connectionPulse {
+                    0%, 100% {
+                        transform: scaleY(1);
+                        opacity: 0.8;
+                    }
+                    50% {
+                        transform: scaleY(1.2);
+                        opacity: 1;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Start particle animation
+            createFlowingParticles();
+
+            // Initial animation state
+            updateAnimationOnScroll();
+        });
     </script>
 <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
 </body>
