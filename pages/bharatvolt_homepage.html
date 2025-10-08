@@ -635,222 +635,307 @@
         });
 
         // ====================================================================
-        // SCROLL-TRIGGERED CONNECTION ANIMATION
-        // + and - terminals move together and form BharatVolt on scroll
+        // JETON-INSPIRED SMOOTH SCROLL ANIMATION
+        // Terminals smoothly merge together to form BharatVolt logo
+        // Features: Cubic-bezier easing, blur effects, 3D transforms, seamless merging
         // ====================================================================
 
         // Wait for DOM to be ready
         window.addEventListener('DOMContentLoaded', () => {
-            // Create animated connection visual overlay
             const heroSection = document.querySelector('#home');
             
             if (heroSection) {
-                // Add scroll animation observer
-                const observerOptions = {
-                    threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-                    rootMargin: '0px'
+                // Smooth easing function (cubic-bezier) like Jeton
+                const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+                const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                
+                // Use requestAnimationFrame for buttery smooth 60fps
+                let ticking = false;
+                let lastScrollY = window.scrollY;
+
+                const updateAnimation = () => {
+                    const rect = heroSection.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                    // Calculate smooth scroll progress (0 to 1)
+                    let rawProgress = 0;
+                    
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+                        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+                        rawProgress = visibleHeight / rect.height;
+                    }
+                    
+                    // Apply smooth easing
+                    const progress = easeInOutCubic(rawProgress);
+
+                    // Apply all animations
+                    animateTerminalsMerge(progress);
+                    animateConnectionLine(progress);
+                    animateBharatVoltLogo(progress);
+                    
+                    ticking = false;
                 };
 
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        // Get scroll progress (0 to 1)
-                        const scrollProgress = entry.intersectionRatio;
-                        
-                        // Animate terminal cards based on scroll
-                        animateTerminals(scrollProgress);
-                        
-                        // Animate connection line
-                        animateConnectionLine(scrollProgress);
-                        
-                        // Animate BharatVolt logo appearance
-                        animateBharatVoltLogo(scrollProgress);
-                    });
-                }, observerOptions);
-
-                observer.observe(heroSection);
-
-                // Add scroll event for smooth transitions
-                let scrollTimeout;
                 window.addEventListener('scroll', () => {
-                    clearTimeout(scrollTimeout);
-                    scrollTimeout = setTimeout(() => {
-                        updateAnimationOnScroll();
-                    }, 10);
-                });
-            }
-
-            function animateTerminals(progress) {
-                // Get terminal cards
-                const manufacturersCard = document.querySelector('#home .lg\\:grid-cols-3 > div:first-child');
-                const labsCard = document.querySelector('#home .lg\\:grid-cols-3 > div:last-child');
-                const centerConnection = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2)');
-
-                if (!manufacturersCard || !labsCard || !centerConnection) return;
-
-                // Calculate movement (terminals move closer as you scroll)
-                const maxMove = 50; // pixels to move
-                const moveAmount = Math.min(progress * maxMove * 2, maxMove);
-
-                // Move manufacturers card to the right
-                manufacturersCard.style.transform = `translateX(${moveAmount}px) scale(${1 + progress * 0.05})`;
-                
-                // Move labs card to the left
-                labsCard.style.transform = `translateX(-${moveAmount}px) scale(${1 + progress * 0.05})`;
-                
-                // Scale up center connection
-                centerConnection.style.transform = `scale(${1 + progress * 0.2})`;
-                
-                // Add glow effect as they get closer
-                const glowIntensity = progress * 30;
-                manufacturersCard.style.boxShadow = `0 0 ${glowIntensity}px rgba(14, 165, 233, ${progress * 0.6})`;
-                labsCard.style.boxShadow = `0 0 ${glowIntensity}px rgba(16, 185, 129, ${progress * 0.6})`;
-                centerConnection.style.boxShadow = `0 0 ${glowIntensity * 1.5}px rgba(249, 115, 22, ${progress * 0.8})`;
-
-                // Add smooth transitions
-                manufacturersCard.style.transition = 'all 0.3s ease-out';
-                labsCard.style.transition = 'all 0.3s ease-out';
-                centerConnection.style.transition = 'all 0.3s ease-out';
-            }
-
-            function animateConnectionLine(progress) {
-                // Get connection line
-                const connectionLine = document.querySelector('#home .lg\\:grid-cols-3 .absolute.inset-0 .w-full.h-1');
-                
-                if (!connectionLine) return;
-
-                // Animate width and opacity
-                connectionLine.style.width = `${progress * 100}%`;
-                connectionLine.style.opacity = progress;
-                
-                // Pulse faster as progress increases
-                const pulseSpeed = Math.max(0.5, 2 - progress * 1.5);
-                connectionLine.style.animationDuration = `${pulseSpeed}s`;
-            }
-
-            function animateBharatVoltLogo(progress) {
-                // Get BharatVolt center logo
-                const bharatVoltLogo = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2) > div:first-child');
-                
-                if (!bharatVoltLogo) return;
-
-                // Fade in and scale up as terminals come together
-                if (progress > 0.5) {
-                    const fadeProgress = (progress - 0.5) * 2; // 0 to 1 in second half
-                    bharatVoltLogo.style.opacity = fadeProgress;
-                    bharatVoltLogo.style.transform = `scale(${0.8 + fadeProgress * 0.4}) rotate(${fadeProgress * 360}deg)`;
-                } else {
-                    bharatVoltLogo.style.opacity = 0.3;
-                    bharatVoltLogo.style.transform = 'scale(0.8)';
-                }
-
-                bharatVoltLogo.style.transition = 'all 0.4s ease-out';
-            }
-
-            function updateAnimationOnScroll() {
-                const heroSection = document.querySelector('#home');
-                if (!heroSection) return;
-
-                const rect = heroSection.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                // Calculate how much of hero is visible (0 to 1)
-                let progress = 0;
-                
-                if (rect.top < windowHeight && rect.bottom > 0) {
-                    // Hero is visible
-                    const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
-                    progress = visibleHeight / rect.height;
-                }
-
-                // Apply animations
-                animateTerminals(progress);
-                animateConnectionLine(progress);
-                animateBharatVoltLogo(progress);
-            }
-
-            // Add particle animation between terminals
-            function createFlowingParticles() {
-                const connectionArea = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2)');
-                if (!connectionArea) return;
-
-                // Create particle container if it doesn't exist
-                let particleContainer = connectionArea.querySelector('.particle-container');
-                if (!particleContainer) {
-                    particleContainer = document.createElement('div');
-                    particleContainer.className = 'particle-container absolute inset-0 pointer-events-none';
-                    connectionArea.appendChild(particleContainer);
-                }
-
-                // Create particles that flow from left to right
-                setInterval(() => {
-                    const particle = document.createElement('div');
-                    particle.className = 'absolute w-2 h-2 rounded-full';
-                    particle.style.background = `linear-gradient(135deg, #0EA5E9, #10B981)`;
-                    particle.style.left = '0%';
-                    particle.style.top = `${Math.random() * 100}%`;
-                    particle.style.opacity = '0.8';
-                    particle.style.animation = 'flowParticle 2s linear forwards';
+                    lastScrollY = window.scrollY;
                     
-                    particleContainer.appendChild(particle);
+                    if (!ticking) {
+                        window.requestAnimationFrame(updateAnimation);
+                        ticking = true;
+                    }
+                }, { passive: true });
 
-                    // Remove particle after animation
-                    setTimeout(() => {
-                        particle.remove();
-                    }, 2000);
-                }, 300); // New particle every 300ms
+                // Initial render
+                updateAnimation();
+
+                function animateTerminalsMerge(progress) {
+                    const manufacturersCard = document.querySelector('#home .lg\\:grid-cols-3 > div:first-child');
+                    const labsCard = document.querySelector('#home .lg\\:grid-cols-3 > div:last-child');
+                    const centerConnection = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2)');
+
+                    if (!manufacturersCard || !labsCard || !centerConnection) return;
+
+                    // PHASE 1: Initial approach (0-0.4) - Terminals slide in
+                    // PHASE 2: Acceleration (0.4-0.7) - Speed up movement
+                    // PHASE 3: Merge (0.7-1.0) - Complete fusion into center
+                    
+                    const phase1 = Math.min(progress / 0.4, 1);
+                    const phase2 = Math.max(0, Math.min((progress - 0.4) / 0.3, 1));
+                    const phase3 = Math.max(0, Math.min((progress - 0.7) / 0.3, 1));
+
+                    // Calculate movement with acceleration (Jeton-style smooth curve)
+                    const baseMove = 80; // Increased from 50px for fuller merge
+                    const acceleratedMove = baseMove * (phase1 * 0.3 + phase2 * 0.5 + phase3 * 1.2);
+                    
+                    // Add 3D perspective for depth
+                    const zDepth = phase3 * 20;
+                    const rotationY = phase3 * 5; // Subtle 3D rotation during merge
+
+                    // Manufacturers card (+ terminal) - moves RIGHT and forward
+                    manufacturersCard.style.willChange = 'transform, opacity, filter';
+                    manufacturersCard.style.transform = `
+                        translateX(${acceleratedMove}px) 
+                        translateZ(${zDepth}px)
+                        rotateY(${rotationY}deg)
+                        scale(${1 + phase1 * 0.05 - phase3 * 0.3})
+                    `;
+                    manufacturersCard.style.opacity = `${1 - phase3 * 0.4}`;
+                    manufacturersCard.style.filter = `blur(${phase3 * 8}px)`;
+                    
+                    // Labs card (- terminal) - moves LEFT and forward
+                    labsCard.style.willChange = 'transform, opacity, filter';
+                    labsCard.style.transform = `
+                        translateX(-${acceleratedMove}px) 
+                        translateZ(${zDepth}px)
+                        rotateY(-${rotationY}deg)
+                        scale(${1 + phase1 * 0.05 - phase3 * 0.3})
+                    `;
+                    labsCard.style.opacity = `${1 - phase3 * 0.4}`;
+                    labsCard.style.filter = `blur(${phase3 * 8}px)`;
+                    
+                    // Center connection - grows as terminals merge
+                    centerConnection.style.willChange = 'transform, opacity';
+                    centerConnection.style.transform = `
+                        scale(${1 + progress * 0.3})
+                        translateZ(${phase3 * 30}px)
+                    `;
+                    centerConnection.style.opacity = `${0.95 + phase3 * 0.05}`;
+
+                    // Dynamic glow with color blending (blue + green = cyan at merge)
+                    const blueGlow = 14 + progress * 20;
+                    const greenGlow = 16 + progress * 20;
+                    const glowIntensity = progress * 40;
+                    const glowSpread = progress * 20;
+                    
+                    manufacturersCard.style.boxShadow = `
+                        0 ${glowSpread}px ${glowIntensity}px rgba(14, 165, 233, ${0.3 + progress * 0.5}),
+                        0 0 ${glowIntensity * 1.5}px rgba(14, 165, 233, ${0.2 + progress * 0.4})
+                    `;
+                    
+                    labsCard.style.boxShadow = `
+                        0 ${glowSpread}px ${glowIntensity}px rgba(16, 185, 129, ${0.3 + progress * 0.5}),
+                        0 0 ${glowIntensity * 1.5}px rgba(16, 185, 129, ${0.2 + progress * 0.4})
+                    `;
+                    
+                    // Center gets cyan glow (blend of blue + green)
+                    centerConnection.style.boxShadow = `
+                        0 ${glowSpread * 1.5}px ${glowIntensity * 2}px rgba(6, 182, 212, ${0.4 + progress * 0.6}),
+                        0 0 ${glowIntensity * 2.5}px rgba(249, 115, 22, ${0.3 + progress * 0.5}),
+                        inset 0 0 ${glowIntensity}px rgba(6, 182, 212, ${progress * 0.3})
+                    `;
+
+                    // No transition property - requestAnimationFrame handles smoothness
+                }
+
+                function animateConnectionLine(progress) {
+                    const connectionLine = document.querySelector('#home .lg\\:grid-cols-3 .absolute.inset-0 .w-full.h-1');
+                    
+                    if (!connectionLine) return;
+
+                    // Smooth width animation with easing
+                    const easedProgress = easeOutCubic(progress);
+                    connectionLine.style.width = `${easedProgress * 100}%`;
+                    connectionLine.style.opacity = `${0.6 + easedProgress * 0.4}`;
+                    
+                    // Height grows at the end for emphasis
+                    const heightMultiplier = 1 + (progress > 0.7 ? (progress - 0.7) * 3 : 0);
+                    connectionLine.style.height = `${4 * heightMultiplier}px`;
+                    
+                    // Pulse speed increases smoothly
+                    const pulseSpeed = Math.max(0.4, 2 - progress * 1.8);
+                    connectionLine.style.animationDuration = `${pulseSpeed}s`;
+                    
+                    // Add glow to connection line
+                    connectionLine.style.filter = `drop-shadow(0 0 ${progress * 20}px rgba(6, 182, 212, ${progress * 0.8}))`;
+                }
+
+                function animateBharatVoltLogo(progress) {
+                    const bharatVoltLogo = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2) > div:first-child');
+                    
+                    if (!bharatVoltLogo) return;
+
+                    // Logo appears progressively as terminals merge
+                    // Early fade-in starts at 0.3, full reveal at 0.8
+                    let logoProgress = 0;
+                    
+                    if (progress < 0.3) {
+                        logoProgress = 0;
+                    } else if (progress < 0.8) {
+                        logoProgress = (progress - 0.3) / 0.5; // 0 to 1 over 0.3 to 0.8 range
+                    } else {
+                        logoProgress = 1;
+                    }
+
+                    const easedLogoProgress = easeOutCubic(logoProgress);
+                    
+                    // Smooth opacity fade
+                    bharatVoltLogo.style.opacity = `${0.2 + easedLogoProgress * 0.8}`;
+                    
+                    // Elegant entrance: slight zoom + rotation + lift
+                    bharatVoltLogo.style.transform = `
+                        scale(${0.7 + easedLogoProgress * 0.5})
+                        rotate(${easedLogoProgress * 180}deg)
+                        translateZ(${easedLogoProgress * 50}px)
+                    `;
+                    
+                    // Brightness increases as logo solidifies
+                    bharatVoltLogo.style.filter = `
+                        brightness(${0.8 + easedLogoProgress * 0.4})
+                        drop-shadow(0 0 ${easedLogoProgress * 30}px rgba(249, 115, 22, ${easedLogoProgress * 0.6}))
+                    `;
+                    
+                    bharatVoltLogo.style.willChange = 'transform, opacity, filter';
+                }
+
+                // Enhanced particle animation with better visuals
+                function createFlowingParticles() {
+                    const connectionArea = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2)');
+                    if (!connectionArea) return;
+
+                    let particleContainer = connectionArea.querySelector('.particle-container');
+                    if (!particleContainer) {
+                        particleContainer = document.createElement('div');
+                        particleContainer.className = 'particle-container absolute inset-0 pointer-events-none overflow-hidden';
+                        connectionArea.appendChild(particleContainer);
+                    }
+
+                    // More frequent, varied particles for smoother flow
+                    setInterval(() => {
+                        const particle = document.createElement('div');
+                        const size = 2 + Math.random() * 3; // Variable size 2-5px
+                        const verticalPos = 40 + Math.random() * 20; // Center vertical area
+                        
+                        particle.className = 'absolute rounded-full';
+                        particle.style.width = `${size}px`;
+                        particle.style.height = `${size}px`;
+                        particle.style.background = `linear-gradient(135deg, rgba(14, 165, 233, 0.8), rgba(16, 185, 129, 0.8))`;
+                        particle.style.left = '0%';
+                        particle.style.top = `${verticalPos}%`;
+                        particle.style.opacity = '0';
+                        particle.style.animation = 'flowParticleSmooth 2.5s ease-in-out forwards';
+                        particle.style.boxShadow = '0 0 10px rgba(6, 182, 212, 0.6)';
+                        
+                        particleContainer.appendChild(particle);
+
+                        setTimeout(() => particle.remove(), 2500);
+                    }, 200); // More frequent - every 200ms
+                }
+
+                // Enhanced CSS animations with Jeton-like smoothness
+                const style = document.createElement('style');
+                style.textContent = `
+                    /* Smooth particle flow with ease-in-out */
+                    @keyframes flowParticleSmooth {
+                        0% {
+                            transform: translateX(0) scale(0) rotate(0deg);
+                            opacity: 0;
+                        }
+                        15% {
+                            opacity: 1;
+                            transform: translateX(10%) scale(1) rotate(90deg);
+                        }
+                        85% {
+                            opacity: 1;
+                            transform: translateX(90%) scale(1) rotate(270deg);
+                        }
+                        100% {
+                            transform: translateX(100%) scale(0) rotate(360deg);
+                            opacity: 0;
+                        }
+                    }
+
+                    /* Ambient glow pulse */
+                    @keyframes terminalGlow {
+                        0%, 100% {
+                            filter: brightness(1) saturate(1);
+                        }
+                        50% {
+                            filter: brightness(1.15) saturate(1.2);
+                        }
+                    }
+
+                    /* Connection line smooth pulse */
+                    @keyframes connectionPulse {
+                        0%, 100% {
+                            transform: scaleY(1);
+                            opacity: 0.9;
+                        }
+                        50% {
+                            transform: scaleY(1.3);
+                            opacity: 1;
+                        }
+                    }
+
+                    /* Add 3D perspective to hero section */
+                    #home .lg\\:grid-cols-3 {
+                        perspective: 1200px;
+                        perspective-origin: center center;
+                    }
+
+                    /* Ensure smooth GPU acceleration */
+                    #home .lg\\:grid-cols-3 > div {
+                        transform-style: preserve-3d;
+                        backface-visibility: hidden;
+                    }
+
+                    /* Reduce motion for accessibility */
+                    @media (prefers-reduced-motion: reduce) {
+                        #home .lg\\:grid-cols-3 > div {
+                            animation: none !important;
+                            transform: none !important;
+                            transition: none !important;
+                        }
+                        
+                        .particle-container {
+                            display: none !important;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+
+                // Start particle flow
+                createFlowingParticles();
             }
-
-            // Add CSS animation for particles
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes flowParticle {
-                    0% {
-                        transform: translateX(0) scale(0);
-                        opacity: 0;
-                    }
-                    20% {
-                        opacity: 0.8;
-                        transform: translateX(20%) scale(1);
-                    }
-                    80% {
-                        opacity: 0.8;
-                        transform: translateX(80%) scale(1);
-                    }
-                    100% {
-                        transform: translateX(100%) scale(0);
-                        opacity: 0;
-                    }
-                }
-
-                /* Glow pulse animation for terminals */
-                @keyframes terminalGlow {
-                    0%, 100% {
-                        filter: brightness(1);
-                    }
-                    50% {
-                        filter: brightness(1.2);
-                    }
-                }
-
-                /* Connection line pulse */
-                @keyframes connectionPulse {
-                    0%, 100% {
-                        transform: scaleY(1);
-                        opacity: 0.8;
-                    }
-                    50% {
-                        transform: scaleY(1.2);
-                        opacity: 1;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-
-            // Start particle animation
-            createFlowingParticles();
-
-            // Initial animation state
-            updateAnimationOnScroll();
         });
     </script>
 <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
