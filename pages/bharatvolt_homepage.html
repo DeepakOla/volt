@@ -689,11 +689,20 @@
                 updateAnimation();
 
                 function animateTerminalsMerge(progress) {
-                    const manufacturersCard = document.querySelector('#home .lg\\:grid-cols-3 > div:first-child');
-                    const labsCard = document.querySelector('#home .lg\\:grid-cols-3 > div:last-child');
-                    const centerConnection = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2)');
+                    const gridContainer = document.querySelector('#home .grid.lg\\:grid-cols-3');
+                    if (!gridContainer) {
+                        console.log('Grid container not found');
+                        return;
+                    }
+                    
+                    const manufacturersCard = gridContainer.children[0];
+                    const centerConnection = gridContainer.children[1];
+                    const labsCard = gridContainer.children[2];
 
-                    if (!manufacturersCard || !labsCard || !centerConnection) return;
+                    if (!manufacturersCard || !labsCard || !centerConnection) {
+                        console.log('Cards not found');
+                        return;
+                    }
 
                     // PHASE 1: Initial approach (0-0.4) - Terminals slide in
                     // PHASE 2: Acceleration (0.4-0.7) - Speed up movement
@@ -768,9 +777,15 @@
                 }
 
                 function animateConnectionLine(progress) {
-                    const connectionLine = document.querySelector('#home .lg\\:grid-cols-3 .absolute.inset-0 .w-full.h-1');
+                    const gridContainer = document.querySelector('#home .grid.lg\\:grid-cols-3');
+                    if (!gridContainer) return;
                     
-                    if (!connectionLine) return;
+                    const connectionLine = gridContainer.querySelector('.absolute.inset-0 .w-full.h-1');
+                    
+                    if (!connectionLine) {
+                        console.log('Connection line not found');
+                        return;
+                    }
 
                     // Smooth width animation with easing
                     const easedProgress = easeOutCubic(progress);
@@ -790,9 +805,18 @@
                 }
 
                 function animateBharatVoltLogo(progress) {
-                    const bharatVoltLogo = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2) > div:first-child');
+                    const gridContainer = document.querySelector('#home .grid.lg\\:grid-cols-3');
+                    if (!gridContainer) return;
                     
-                    if (!bharatVoltLogo) return;
+                    const centerConnection = gridContainer.children[1];
+                    if (!centerConnection) return;
+                    
+                    const bharatVoltLogo = centerConnection.querySelector('.relative.z-10');
+                    
+                    if (!bharatVoltLogo) {
+                        console.log('Logo not found');
+                        return;
+                    }
 
                     // Logo appears progressively as terminals merge
                     // Early fade-in starts at 0.3, full reveal at 0.8
@@ -829,8 +853,17 @@
 
                 // Enhanced particle animation with better visuals
                 function createFlowingParticles() {
-                    const connectionArea = document.querySelector('#home .lg\\:grid-cols-3 > div:nth-child(2)');
-                    if (!connectionArea) return;
+                    const gridContainer = document.querySelector('#home .grid.lg\\:grid-cols-3');
+                    if (!gridContainer) {
+                        console.log('Grid container not found for particles');
+                        return;
+                    }
+                    
+                    const connectionArea = gridContainer.children[1]; // Center element
+                    if (!connectionArea) {
+                        console.log('Connection area not found');
+                        return;
+                    }
 
                     let particleContainer = connectionArea.querySelector('.particle-container');
                     if (!particleContainer) {
