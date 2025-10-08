@@ -128,7 +128,11 @@ module.exports = {
       animation: {
         'fade-in': 'fadeIn 400ms ease-out',
         'slide-up': 'slideUp 400ms ease-out',
+        'slide-right': 'slideRight 600ms ease-out',
+        'slide-left': 'slideLeft 600ms ease-out',
         'scale-in': 'scaleIn 300ms ease-out',
+        'float': 'float 3s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -139,9 +143,25 @@ module.exports = {
           '0%': { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        slideRight: {
+          '0%': { opacity: '0', transform: 'translateX(-50px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideLeft: {
+          '0%': { opacity: '0', transform: 'translateX(50px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
         scaleIn: {
           '0%': { opacity: '0', transform: 'scale(0.95)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.4)' },
+          '50%': { boxShadow: '0 0 40px rgba(14, 165, 233, 0.8)' },
         },
       },
       transitionDuration: {
