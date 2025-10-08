@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BharatVolt Technologies - Powering the Future, Today and Beyond | EV Battery Testing & Consultancy</title>
+    <meta name="description" content="India's most trusted EV battery testing and consultancy marketplace. Connecting battery manufacturers with certified testing labs for performance, safety, and certification services." />
+    <meta name="keywords" content="EV battery testing, lithium battery certification, battery safety testing, India battery lab, UN 38.3, UL 2580, IEC 60095" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="../public/favicon.ico" />
+</head>
+<body class="bg-background dark:bg-background-dark text-text-primary dark:text-text-primary-dark transition-colors duration-300">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-primary-950/95 backdrop-blur-md border-b border-border dark:border-border-dark transition-colors duration-300">
+        <nav class="container-custom py-4 px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <svg class="w-10 h-10 text-primary-500" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="currentColor" fill-opacity="0.1"/>
+                        <path d="M20 8L28 12V20L20 24L12 20V12L20 8Z" fill="currentColor"/>
+                        <circle cx="20" cy="20" r="6" fill="white" class="dark:fill-primary-950"/>
+                        <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                        <path d="M15 28H25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M17 31H23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div>
+                        <span class="text-2xl font-headline font-bold text-primary-500 dark:text-primary-400">BharatVolt</span>
+                        <div class="text-xs text-text-secondary dark:text-text-secondary-dark font-medium">Technologies</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="bharatvolt_homepage.html" class="text-primary-500 dark:text-primary-400 font-semibold border-b-2 border-primary-500">Home</a>
+                    <a href="bharatvolt_services.html" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary-500 dark:hover:text-primary-400 transition-fast">Services</a>
+                    <a href="bharatvolt_marketplace.html" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary-500 dark:hover:text-primary-400 transition-fast">Marketplace</a>
+                    <a href="bharatvolt_resources.html" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary-500 dark:hover:text-primary-400 transition-fast">Resources</a>
+                    <a href="bharatvolt_about.html" class="text-text-secondary dark:text-text-secondary-dark hover:text-primary-500 dark:hover:text-primary-400 transition-fast">About</a>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex items-center space-x-4">
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle" class="hidden sm:flex items-center space-x-1 text-sm text-text-secondary dark:text-text-secondary-dark hover:text-primary-500 dark:hover:text-primary-400 transition-fast">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                        </svg>
+                        <span id="lang-text">EN</span>
+                    </button>
+
+                    <!-- Currency Toggle -->
+                    <button id="currency-toggle" class="hidden sm:flex items-center space-x-1 text-sm text-text-secondary dark:text-text-secondary-dark hover:text-primary-500 dark:hover:text-primary-400 transition-fast">
+                        <span id="currency-symbol">₹</span>
+                        <span id="currency-text">INR</span>
+                    </button>
+
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-fast">
+                        <svg id="theme-icon-light" class="w-5 h-5 dark:hidden text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                        <svg id="theme-icon-dark" class="w-5 h-5 hidden dark:block text-text-secondary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="contact_consultation_multi_channel_engagement.html" class="hidden md:block btn-primary">Request Quote</a>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 text-text-primary dark:text-text-primary-dark" id="mobile-menu-btn">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="lg:hidden hidden mt-4 pb-4 border-t border-border dark:border-border-dark" id="mobile-menu">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="#home" class="text-primary-500 dark:text-primary-400 font-semibold">Home</a>
+                    <a href="services_interactive_capability_explorer.html" class="text-text-secondary dark:text-text-secondary-dark">Services</a>
+                    <a href="#marketplace" class="text-text-secondary dark:text-text-secondary-dark">Marketplace</a>
+                    <a href="resources_authority_building_knowledge_hub.html" class="text-text-secondary dark:text-text-secondary-dark">Resources</a>
+                    <a href="about_company_expertise_trust.html" class="text-text-secondary dark:text-text-secondary-dark">About</a>
+                    <a href="contact_consultation_multi_channel_engagement.html" class="btn-primary w-full text-center">Request Quote</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-primary-950 dark:via-primary-900 dark:to-secondary-950">
+        <!-- Animated Background Pattern -->
+        <div class="absolute inset-0 opacity-5 dark:opacity-10">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-primary-500 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute top-40 right-20 w-48 h-48 bg-secondary-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-20 left-1/4 w-40 h-40 bg-accent-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="container-custom section-padding py-20 lg:py-32 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="animate-fade-in">
+                    <div class="inline-flex items-center space-x-2 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>India's Trusted Battery Testing Platform</span>
+                    </div>
+
+                    <h1 class="hero-title text-primary-950 dark:text-white mb-6">
+                        Powering the Future,<br/>
+                        <span class="text-gradient">Today and Beyond</span>
+                    </h1>
+                    
+                    <p class="text-xl text-text-secondary dark:text-text-secondary-dark mb-8 leading-relaxed">
+                        Connect with certified testing laboratories for comprehensive EV battery performance, safety, and certification services. Anonymous, secure, and trusted by manufacturers across India.
+                    </p>
+                    
+                    <!-- Primary CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <a href="#marketplace" class="btn-primary text-center group">
+                            Find Testing Partner
+                            <svg class="inline-block w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="contact_consultation_multi_channel_engagement.html" class="btn-outline text-center">
+                            Book Consultation
+                        </a>
+                    </div>
+
+                    <!-- Success Metrics -->
+                    <div class="bg-white/80 dark:bg-primary-900/30 backdrop-blur-sm rounded-xl p-6 border border-border dark:border-border-dark shadow-card">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="metric-value">3000+</div>
+                                <div class="metric-label">Test Channels</div>
+                            </div>
+                            <div>
+                                <div class="metric-value">150+</div>
+                                <div class="metric-label">Env. Chambers</div>
+                            </div>
+                            <div>
+                                <div class="metric-value">1000A</div>
+                                <div class="metric-label">Max Current</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="relative animate-slide-up">
+                    <div class="relative rounded-2xl overflow-hidden shadow-modal">
+                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072&auto=format&fit=crop" 
+                             alt="EV Battery Testing Laboratory" 
+                             class="w-full h-96 lg:h-[500px] object-cover" 
+                             loading="eager" 
+                             onerror="this.src='https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?q=80&w=2072&auto=format&fit=crop'; this.onerror=null;" />
+                        
+                        <!-- Floating Capability Card -->
+                        <div class="absolute bottom-6 left-6 right-6 bg-white dark:bg-primary-900 rounded-xl p-4 shadow-modal border border-border dark:border-border-dark backdrop-blur-sm animate-scale-in">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 bg-secondary-100 dark:bg-secondary-900 rounded-full flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-secondary-600 dark:text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-primary-900 dark:text-white text-sm">UN 38.3 Certified</div>
+                                        <div class="text-xs text-text-secondary dark:text-text-secondary-dark">International Standards</div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold font-mono text-secondary-600 dark:text-secondary-400">900V</div>
+                                    <div class="text-xs text-text-secondary dark:text-text-secondary-dark">Max Voltage</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section-padding bg-white dark:bg-primary-950">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-primary-950 dark:text-white mb-4">Comprehensive Testing Services</h2>
+                <p class="text-xl text-text-secondary dark:text-text-secondary-dark max-w-3xl mx-auto">
+                    Industry-leading battery testing across all chemistries, formats, and applications
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <a href="services_interactive_capability_explorer.html" class="group card hover:scale-105 cursor-pointer">
+                    <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+                        <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-headline font-semibold text-primary-900 dark:text-white mb-2">Performance Testing</h3>
+                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark mb-3">Real-world characterization of cell, module, and pack performance</p>
+                    <div class="data-card">
+                        <div class="text-xs text-primary-600 dark:text-primary-400 font-mono">5V–150µA to 5V–450A</div>
+                    </div>
+                </a>
+
+                <!-- Service Card 2 -->
+                <a href="services_interactive_capability_explorer.html" class="group card hover:scale-105 cursor-pointer">
+                    <div class="w-14 h-14 bg-secondary-100 dark:bg-secondary-900 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+                        <svg class="w-7 h-7 text-secondary-600 dark:text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-headline font-semibold text-primary-900 dark:text-white mb-2">Safety Testing</h3>
+                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark mb-3">Consumer & product safety validation for regulatory compliance</p>
+                    <div class="data-card">
+                        <div class="text-xs text-secondary-600 dark:text-secondary-400 font-mono">UN 38.3 | UL 2580</div>
+                    </div>
+                </a>
+
+                <!-- Service Card 3 -->
+                <a href="services_interactive_capability_explorer.html" class="group card hover:scale-105 cursor-pointer">
+                    <div class="w-14 h-14 bg-accent-100 dark:bg-accent-900 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+                        <svg class="w-7 h-7 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-headline font-semibold text-primary-900 dark:text-white mb-2">Abuse Testing</h3>
+                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark mb-3">Extreme-condition behavior and destructive testing protocols</p>
+                    <div class="data-card">
+                        <div class="text-xs text-accent-600 dark:text-accent-400 font-mono">Thermal | Mechanical</div>
+                    </div>
+                </a>
+
+                <!-- Service Card 4 -->
+                <a href="services_interactive_capability_explorer.html" class="group card hover:scale-105 cursor-pointer">
+                    <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+                        <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-headline font-semibold text-primary-900 dark:text-white mb-2">Certification</h3>
+                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark mb-3">Regulatory testing for Li-ion cells and EV battery packs</p>
+                    <div class="data-card">
+                        <div class="text-xs text-primary-600 dark:text-primary-400 font-mono">IEC 60095 | ECE R100</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="services_interactive_capability_explorer.html" class="btn-primary">
+                    Explore All Services
+                    <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace CTA -->
+    <section id="marketplace" class="section-padding bg-gradient-to-br from-primary-500 to-secondary-500 text-white">
+        <div class="container-custom">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold font-headline mb-6">Connect with Testing Partners</h2>
+                <p class="text-xl text-primary-50 mb-8 leading-relaxed">
+                    Our secure marketplace connects battery manufacturers with certified laboratories across India and beyond. Anonymous, confidential, and efficient.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-10">
+                    <!-- For Manufacturers -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">For Manufacturers</h3>
+                        <p class="text-primary-100 mb-6">Post your testing requirements and receive matched proposals from qualified labs</p>
+                        <a href="contact_consultation_multi_channel_engagement.html" class="inline-block bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-all">
+                            Post Requirement
+                        </a>
+                    </div>
+
+                    <!-- For Testing Labs -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">For Testing Labs</h3>
+                        <p class="text-primary-100 mb-6">Join our network and access pre-qualified testing opportunities</p>
+                        <a href="contact_consultation_multi_channel_engagement.html" class="inline-block bg-white text-secondary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-all">
+                            Join Network
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-center space-x-2 text-primary-100 text-sm">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>100% Confidential | Secure Matching | Verified Labs Only</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why BharatVolt -->
+    <section class="section-padding bg-surface dark:bg-primary-900">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-primary-950 dark:text-white mb-4">Why BharatVolt Technologies?</h2>
+                <p class="text-xl text-text-secondary dark:text-text-secondary-dark max-w-3xl mx-auto">
+                    India's first comprehensive battery testing marketplace with international-grade capabilities
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-headline font-bold text-primary-900 dark:text-white mb-3">Confidential Matching</h3>
+                    <p class="text-text-secondary dark:text-text-secondary-dark">Anonymous connection between manufacturers and labs until formal engagement</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-secondary-100 dark:bg-secondary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-secondary-600 dark:text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-headline font-bold text-primary-900 dark:text-white mb-3">International Standards</h3>
+                    <p class="text-text-secondary dark:text-text-secondary-dark">UN 38.3, UL 2580, IEC 60095, ECE R100 certified testing capabilities</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-accent-100 dark:bg-accent-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-headline font-bold text-primary-900 dark:text-white mb-3">Largest Capacity</h3>
+                    <p class="text-text-secondary dark:text-text-secondary-dark">3,000+ test channels, 150+ environmental chambers, up to 900V–1000A</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-950 dark:bg-black text-white py-12">
+        <div class="container-custom px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <svg class="w-8 h-8 text-primary-400" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="currentColor" fill-opacity="0.1"/>
+                            <path d="M20 8L28 12V20L20 24L12 20V12L20 8Z" fill="currentColor"/>
+                            <circle cx="20" cy="20" r="6" fill="white"/>
+                            <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                            <path d="M15 28H25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M17 31H23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <div>
+                            <span class="text-xl font-bold">BharatVolt Technologies</span>
+                            <div class="text-xs text-primary-300">Powering the Future</div>
+                        </div>
+                    </div>
+                    <p class="text-primary-200 text-sm mb-4">
+                        India's most trusted EV battery testing and consultancy marketplace, connecting manufacturers with certified laboratories for world-class testing services.
+                    </p>
+                    <div class="flex items-center space-x-2 text-sm text-primary-300">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        <span>info@bharatvolt.in</span>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-primary-200">
+                        <li><a href="services_interactive_capability_explorer.html" class="hover:text-primary-400 transition-fast">Services</a></li>
+                        <li><a href="#marketplace" class="hover:text-primary-400 transition-fast">Marketplace</a></li>
+                        <li><a href="about_company_expertise_trust.html" class="hover:text-primary-400 transition-fast">About Us</a></li>
+                        <li><a href="contact_consultation_multi_channel_engagement.html" class="hover:text-primary-400 transition-fast">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-primary-200">
+                        <li><a href="services_interactive_capability_explorer.html" class="hover:text-primary-400 transition-fast">Performance Testing</a></li>
+                        <li><a href="services_interactive_capability_explorer.html" class="hover:text-primary-400 transition-fast">Safety Testing</a></li>
+                        <li><a href="services_interactive_capability_explorer.html" class="hover:text-primary-400 transition-fast">Certification</a></li>
+                        <li><a href="services_interactive_capability_explorer.html" class="hover:text-primary-400 transition-fast">Consultancy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-primary-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-primary-300 mb-4 md:mb-0">
+                    © 2025 BharatVolt Technologies. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-sm text-primary-300">
+                    <a href="#" class="hover:text-primary-400 transition-fast">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-400 transition-fast">Terms of Service</a>
+                    <a href="#" class="hover:text-primary-400 transition-fast">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu?.classList.toggle('hidden');
+        });
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+
+        themeToggle?.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Language toggle
+        const langToggle = document.getElementById('lang-toggle');
+        const langText = document.getElementById('lang-text');
+        let currentLang = 'EN';
+
+        langToggle?.addEventListener('click', () => {
+            currentLang = currentLang === 'EN' ? 'हिं' : 'EN';
+            if (langText) langText.textContent = currentLang;
+            // Here you would implement actual language switching
+        });
+
+        // Currency toggle
+        const currencyToggle = document.getElementById('currency-toggle');
+        const currencySymbol = document.getElementById('currency-symbol');
+        const currencyText = document.getElementById('currency-text');
+        let currentCurrency = 'INR';
+
+        currencyToggle?.addEventListener('click', () => {
+            if (currentCurrency === 'INR') {
+                currentCurrency = 'USD';
+                if (currencySymbol) currencySymbol.textContent = '$';
+                if (currencyText) currencyText.textContent = 'USD';
+            } else {
+                currentCurrency = 'INR';
+                if (currencySymbol) currencySymbol.textContent = '₹';
+                if (currencyText) currencyText.textContent = 'INR';
+            }
+            // Here you would implement actual currency conversion
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#marketplace') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

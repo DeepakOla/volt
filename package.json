@@ -1,0 +1,47 @@
+{
+  "name": "bharatvolt-technologies",
+  "version": "0.0.1",
+  "description": "BharatVolt Technologies - EV Battery Testing & Consultancy Platform. World-class enterprise platform for battery manufacturers and testing laboratories.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeepakOla/volt.git"
+  },
+  "keywords": [
+    "ev-battery-testing",
+    "battery-certification",
+    "testing-lab",
+    "india-ev",
+    "un-38-3",
+    "ul-2580",
+    "battery-marketplace",
+    "tailwindcss"
+  ],
+  "author": "BharatVolt Technologies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DeepakOla/volt/issues"
+  },
+  "homepage": "https://github.com/DeepakOla/volt#readme",
+  "dependencies": {
+    "@dhiwise/component-tagger": "^1.0.9",
+    "@tailwindcss/forms": "^0.5.7",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-elevation": "^2.0.0",
+    "tailwindcss-fluid-type": "^2.0.7"
+  },
+  "scripts": {
+    "build:css": "npx @dhiwise/component-tagger && npx tailwindcss -i ./css/tailwind.css -o ./css/main.css",
+    "watch:css": "npx @dhiwise/component-tagger && npx tailwindcss -i ./css/tailwind.css -o ./css/main.css --watch",
+    "dev": "npm run watch:css"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/line-clamp": "^0.1.0",
+    "@tailwindcss/typography": "^0.5.16"
+  }
+}

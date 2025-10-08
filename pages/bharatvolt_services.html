@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battery Testing Services - BharatVolt Technologies</title>
+    <meta name="description" content="Comprehensive EV battery testing services including performance, safety, abuse, certification, and failure analysis. UN 38.3, UL 2580, IEC 60095, ECE R100 certified." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body class="bg-background dark:bg-background-dark text-text-primary dark:text-text-primary-dark">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-primary-950/95 backdrop-blur-md border-b border-border dark:border-border-dark">
+        <nav class="container-custom py-4 px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-10 h-10 text-primary-500" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="currentColor" fill-opacity="0.1"/>
+                        <path d="M20 8L28 12V20L20 24L12 20V12L20 8Z" fill="currentColor"/>
+                        <circle cx="20" cy="20" r="6" fill="white" class="dark:fill-primary-950"/>
+                        <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                        <path d="M15 28H25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M17 31H23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div>
+                        <span class="text-2xl font-headline font-bold text-primary-500">BharatVolt</span>
+                        <div class="text-xs text-text-secondary font-medium">Technologies</div>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="bharatvolt_homepage.html" class="text-text-secondary hover:text-primary-500 transition-fast">Home</a>
+                    <a href="bharatvolt_services.html" class="text-primary-500 font-semibold border-b-2 border-primary-500">Services</a>
+                    <a href="bharatvolt_marketplace.html" class="text-text-secondary hover:text-primary-500 transition-fast">Marketplace</a>
+                    <a href="bharatvolt_resources.html" class="text-text-secondary hover:text-primary-500 transition-fast">Resources</a>
+                    <a href="bharatvolt_about.html" class="text-text-secondary hover:text-primary-500 transition-fast">About</a>
+                    <a href="bharatvolt_contact.html" class="btn-primary">Request Quote</a>
+                </div>
+
+                <button class="lg:hidden p-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="lg:hidden hidden mt-4 pb-4 border-t border-border" id="mobile-menu">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="bharatvolt_homepage.html">Home</a>
+                    <a href="bharatvolt_services.html" class="text-primary-500 font-semibold">Services</a>
+                    <a href="bharatvolt_marketplace.html">Marketplace</a>
+                    <a href="bharatvolt_resources.html">Resources</a>
+                    <a href="bharatvolt_about.html">About</a>
+                    <a href="bharatvolt_contact.html" class="btn-primary text-center">Request Quote</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-950 dark:to-secondary-950 py-20">
+        <div class="container-custom px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+                    </svg>
+                    <span>International-Grade Testing Capabilities</span>
+                </div>
+                
+                <h1 class="hero-title text-primary-950 dark:text-white mb-6">
+                    Comprehensive Battery<br/>
+                    <span class="text-gradient">Testing Services</span>
+                </h1>
+                
+                <p class="text-xl text-text-secondary dark:text-text-secondary-dark leading-relaxed mb-8">
+                    From cell characterization to full pack certification, we provide end-to-end testing services across all battery chemistries, formats, and applications.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                    <div class="data-card">
+                        <div class="metric-value text-xl">3000+</div>
+                        <div class="metric-label text-xs">Channels</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="metric-value text-xl">150+</div>
+                        <div class="metric-label text-xs">Chambers</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="metric-value text-xl">900V</div>
+                        <div class="metric-label text-xs">Max Voltage</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="metric-value text-xl">1000A</div>
+                        <div class="metric-label text-xs">Max Current</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="section-padding bg-white dark:bg-primary-950">
+        <div class="container-custom">
+            <!-- Service 1: Performance Testing -->
+            <div class="mb-20" id="performance">
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <div class="inline-flex items-center space-x-2 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                            <span>Service 01</span>
+                        </div>
+                        <h2 class="text-4xl font-bold font-headline text-primary-950 dark:text-white mb-4">Battery Performance Testing</h2>
+                        <p class="text-lg text-text-secondary dark:text-text-secondary-dark mb-6">
+                            Real-world performance characterization for cells, modules, and packs. Comprehensive cycle life, capacity, efficiency, and power capability testing.
+                        </p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div>
+                                    <div class="font-semibold text-primary-900 dark:text-white">Cycle Life & Aging</div>
+                                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark">Accelerated aging protocols and long-term degradation analysis</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div>
+                                    <div class="font-semibold text-primary-900 dark:text-white">Power & Energy Density</div>
+                                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark">C-rate performance mapping and energy efficiency analysis</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div>
+                                    <div class="font-semibold text-primary-900 dark:text-white">Temperature Performance</div>
+                                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark">-40°C to +85°C environmental testing</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="bharatvolt_contact.html" class="btn-primary">
+                            Request Quote
+                            <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-800">
+                        <h3 class="text-lg font-semibold text-primary-900 dark:text-white mb-6">Technical Specifications</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark mb-1">Voltage Range</div>
+                                <div class="font-mono text-lg font-bold text-primary-600 dark:text-primary-400">5V – 900V</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark mb-1">Current Range</div>
+                                <div class="font-mono text-lg font-bold text-primary-600 dark:text-primary-400">150µA – 1000A</div>
+                                <div class="text-xs text-text-secondary dark:text-text-secondary-dark mt-1">Parallel channels support >1200A</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark mb-1">Test Channels</div>
+                                <div class="font-mono text-lg font-bold text-primary-600 dark:text-primary-400">3000+</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark mb-1">Environmental Chambers</div>
+                                <div class="font-mono text-lg font-bold text-primary-600 dark:text-primary-400">150+</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark mb-1">Temperature Range</div>
+                                <div class="font-mono text-lg font-bold text-primary-600 dark:text-primary-400">-40°C to +85°C</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-800">
+                            <div class="text-sm font-semibold text-primary-900 dark:text-white mb-3">Supported Formats</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium">Coin Cells</span>
+                                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium">Cylindrical</span>
+                                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium">Prismatic</span>
+                                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium">Pouch</span>
+                                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium">Modules</span>
+                                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium">Packs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2: Safety Testing -->
+            <div class="mb-20" id="safety">
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <div class="lg:order-2">
+                        <div class="inline-flex items-center space-x-2 bg-secondary-100 dark:bg-secondary-900 text-secondary-700 dark:text-secondary-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                            <span>Service 02</span>
+                        </div>
+                        <h2 class="text-4xl font-bold font-headline text-primary-950 dark:text-white mb-4">Battery Safety Testing</h2>
+                        <p class="text-lg text-text-secondary dark:text-text-secondary-dark mb-6">
+                            Consumer and product safety validation ensuring regulatory compliance for commercial deployment.
+                        </p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div>
+                                    <div class="font-semibold text-primary-900 dark:text-white">Electrical Safety</div>
+                                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark">Short circuit, overcharge, over-discharge protection validation</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div>
+                                    <div class="font-semibold text-primary-900 dark:text-white">Thermal Safety</div>
+                                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark">Thermal runaway prevention and mitigation testing</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div>
+                                    <div class="font-semibold text-primary-900 dark:text-white">Transport Safety</div>
+                                    <p class="text-sm text-text-secondary dark:text-text-secondary-dark">UN 38.3 compliance for air, sea, and ground transport</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="bharatvolt_contact.html" class="btn-secondary">
+                            Request Quote
+                            <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="lg:order-1 bg-neutral-50 dark:bg-neutral-900 rounded-2xl p-8 border border-neutral-200 dark:border-neutral-800">
+                        <h3 class="text-lg font-semibold text-primary-900 dark:text-white mb-6">Certification Standards</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="font-mono font-bold text-secondary-600 dark:text-secondary-400">UN 38.3</div>
+                                    <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark">Transport of Dangerous Goods</div>
+                            </div>
+
+                            <div class="p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="font-mono font-bold text-secondary-600 dark:text-secondary-400">UL 2580</div>
+                                    <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark">EV Battery Safety Standard</div>
+                            </div>
+
+                            <div class="p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="font-mono font-bold text-secondary-600 dark:text-secondary-400">IEC 62133</div>
+                                    <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark">Secondary Cells & Batteries Safety</div>
+                            </div>
+
+                            <div class="p-4 bg-white dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="font-mono font-bold text-secondary-600 dark:text-secondary-400">CTIA/IEEE</div>
+                                    <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark">Mobile Device Battery Safety</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-800">
+                            <div class="text-sm font-semibold text-primary-900 dark:text-white mb-3">Test Coverage</div>
+                            <div class="text-xs text-text-secondary dark:text-text-secondary-dark space-y-1">
+                                <div>✓ Altitude simulation</div>
+                                <div>✓ Thermal cycling</div>
+                                <div>✓ Vibration & shock</div>
+                                <div>✓ External short circuit</div>
+                                <div>✓ Impact & crush</div>
+                                <div>✓ Nail penetration</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3: Abuse Testing -->
+            <div class="mb-20" id="abuse">
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <div class="inline-flex items-center space-x-2 bg-accent-100 dark:bg-accent-900 text-accent-700 dark:text-accent-300 px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                            <span>Service 03</span>
+                        </div>
+                        <h2 class="text-4xl font-bold font-headline text-primary-950 dark:text-white mb-4">Battery Abuse Testing</h2>
+                        <p class="text-lg text-text-secondary dark:text-text-secondary-dark mb-6">
+                            Extreme-condition behavior analysis and destructive testing to validate safety margins and failure modes.
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-4 mb-8">
+                            <div class="p-4 bg-neutral-50 dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark mb-1">Thermal Abuse</div>
+                                <div class="font-mono text-lg font-bold text-accent-600 dark:text-accent-400">-40°C to +150°C</div>
+                            </div>
+                            <div class="p-4 bg-neutral-50 dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-800">
+                                <div class="text-sm text-text-secondary dark:text-text-secondary-dark mb-1">Mechanical Abuse</div>
+                                <div class="font-mono text-lg font-bold text-accent-600 dark:text-accent-400">Up to 100kN</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                                <span class="text-sm text-text-secondary dark:text-text-secondary-dark">Overcharge & over-discharge abuse</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                                <span class="text-sm text-text-secondary dark:text-text-secondary-dark">Thermal runaway propagation</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                                <span class="text-sm text-text-secondary dark:text-text-secondary-dark">Mechanical crush & penetration</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full"></div>
+                                <span class="text-sm text-text-secondary dark:text-text-secondary-dark">External heating to failure</span>
+                            </div>
+                        </div>
+
+                        <a href="bharatvolt_contact.html" class="btn-accent">
+                            Request Quote
+                            <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-950 dark:to-accent-900 rounded-2xl p-8 border border-accent-200 dark:border-accent-800">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <svg class="w-8 h-8 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                            <h3 class="text-lg font-semibold text-primary-900 dark:text-white">Safety Note</h3>
+                        </div>
+                        <p class="text-text-secondary dark:text-text-secondary-dark mb-4">
+                            All abuse testing conducted in controlled environments with proper containment, monitoring, and safety protocols.
+                        </p>
+                        <div class="bg-white/50 dark:bg-black/20 rounded-lg p-4">
+                            <div class="text-xs font-semibold text-accent-700 dark:text-accent-300 mb-2">Typical Abuse Scenarios</div>
+                            <ul class="space-y-1 text-sm text-text-secondary dark:text-text-secondary-dark">
+                                <li>• Nail penetration test</li>
+                                <li>• Hydraulic crush test</li>
+                                <li>• Thermal oven exposure</li>
+                                <li>• External short circuit</li>
+                                <li>• Forced discharge</li>
+                                <li>• Drop & impact testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <!-- Service 4: Failure Analysis -->
+                <div class="card">
+                    <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-900 dark:text-white mb-3">Failure Analysis</h3>
+                    <p class="text-text-secondary dark:text-text-secondary-dark mb-4 text-sm">
+                        Root-cause investigations and forensic analysis of battery failures, performance degradation, and safety incidents.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="text-xs text-text-secondary dark:text-text-secondary-dark">✓ Post-mortem analysis</div>
+                        <div class="text-xs text-text-secondary dark:text-text-secondary-dark">✓ Material characterization</div>
+                        <div class="text-xs text-text-secondary dark:text-text-secondary-dark">✓ Degradation mechanisms</div>
+                    </div>
+                    <a href="bharatvolt_contact.html" class="text-primary-600 dark:text-primary-400 font-semibold text-sm hover:underline">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Service 5: Lithium Certification -->
+                <div class="card">
+                    <div class="w-14 h-14 bg-secondary-100 dark:bg-secondary-900 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-secondary-600 dark:text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-900 dark:text-white mb-3">Lithium Certification</h3>
+                    <p class="text-text-secondary dark:text-text-secondary-dark mb-4 text-sm">
+                        Regulatory and compliance testing for Li-ion cells in wireless devices, consumer electronics, and mobile applications.
+                    </p>
+                    <div class="data-card mb-6">
+                        <div class="text-xs text-secondary-600 dark:text-secondary-400 font-mono">UN 38.3 | IEC 62133 | UL 1642</div>
+                    </div>
+                    <a href="bharatvolt_contact.html" class="text-secondary-600 dark:text-secondary-400 font-semibold text-sm hover:underline">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Service 6: EV/HEV Testing -->
+                <div class="card">
+                    <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-900 dark:text-white mb-3">EV/HEV Battery Testing</h3>
+                    <p class="text-text-secondary dark:text-text-secondary-dark mb-4 text-sm">
+                        Cell, module, and pack validation for electric vehicles and hybrid electric vehicles. High-power testing up to 1000A.
+                    </p>
+                    <div class="data-card mb-6">
+                        <div class="text-xs text-primary-600 dark:text-primary-400 font-mono">900V–1000A | Pack Level</div>
+                    </div>
+                    <a href="bharatvolt_contact.html" class="text-primary-600 dark:text-primary-400 font-semibold text-sm hover:underline">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Service 7: Automotive Standards -->
+                <div class="card">
+                    <div class="w-14 h-14 bg-accent-100 dark:bg-accent-900 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-900 dark:text-white mb-3">Automotive Standards</h3>
+                    <p class="text-text-secondary dark:text-text-secondary-dark mb-4 text-sm">
+                        Testing to international automotive battery standards including IEC 60095, ECE R100, and ISO 12405 compliance.
+                    </p>
+                    <div class="data-card mb-6">
+                        <div class="text-xs text-accent-600 dark:text-accent-400 font-mono">IEC 60095 | ECE R100</div>
+                    </div>
+                    <a href="bharatvolt_contact.html" class="text-accent-600 dark:text-accent-400 font-semibold text-sm hover:underline">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Service 8: Medical Device -->
+                <div class="card">
+                    <div class="w-14 h-14 bg-secondary-100 dark:bg-secondary-900 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-secondary-600 dark:text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-900 dark:text-white mb-3">Medical Device Batteries</h3>
+                    <p class="text-text-secondary dark:text-text-secondary-dark mb-4 text-sm">
+                        Safety and certification testing for batteries used in medical devices, ensuring patient safety and regulatory compliance.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="text-xs text-text-secondary dark:text-text-secondary-dark">✓ FDA compliance</div>
+                        <div class="text-xs text-text-secondary dark:text-text-secondary-dark">✓ IEC 60601 testing</div>
+                    </div>
+                    <a href="bharatvolt_contact.html" class="text-secondary-600 dark:text-secondary-400 font-semibold text-sm hover:underline">
+                        Learn More →
+                    </a>
+                </div>
+
+                <!-- Additional: Supercapacitors -->
+                <div class="card">
+                    <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-900 dark:text-white mb-3">Supercapacitor Testing</h3>
+                    <p class="text-text-secondary dark:text-text-secondary-dark mb-4 text-sm">
+                        Performance characterization and lifetime testing for supercapacitors and hybrid energy storage systems.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <div class="text-xs text-text-secondary dark:text-text-secondary-dark">✓ Charge/discharge cycles</div>
+                        <div class="text-xs text-text-secondary dark:text-text-secondary-dark">✓ ESR & capacitance</div>
+                    </div>
+                    <a href="bharatvolt_contact.html" class="text-primary-600 dark:text-primary-400 font-semibold text-sm hover:underline">
+                        Learn More →
+                    </a>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl p-12 text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Need Custom Testing Solutions?</h2>
+                <p class="text-xl text-primary-50 mb-8 max-w-2xl mx-auto">
+                    Our team can design bespoke testing protocols tailored to your specific battery technology and application requirements.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="bharatvolt_contact.html" class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-all">
+                        Request Custom Quote
+                    </a>
+                    <a href="bharatvolt_homepage.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-950 dark:bg-black text-white py-12">
+        <div class="container-custom px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <svg class="w-8 h-8 text-primary-400" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="currentColor" fill-opacity="0.1"/>
+                        <path d="M20 8L28 12V20L20 24L12 20V12L20 8Z" fill="currentColor"/>
+                        <circle cx="20" cy="20" r="6" fill="white"/>
+                        <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                    </svg>
+                    <span class="text-xl font-bold">BharatVolt Technologies</span>
+                </div>
+                <p class="text-primary-200 text-sm mb-4">Powering the Future, Today and Beyond</p>
+                <p class="text-primary-300 text-sm">© 2025 BharatVolt Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn?.addEventListener('click', () => mobileMenu?.classList.toggle('hidden'));
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

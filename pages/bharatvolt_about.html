@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About BharatVolt - India's Trusted EV Battery Testing Consultancy</title>
+    <meta name="description" content="Learn about BharatVolt Technologies - India's premier battery testing consultancy and marketplace. International standards, confidential testing, expert team.">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-lg font-bold text-slate-900 dark:text-white">BharatVolt</div>
+                        <div class="text-xs text-slate-600 dark:text-slate-400 -mt-1">Technologies</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="bharatvolt_homepage.html" class="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Home</a>
+                    <a href="bharatvolt_services.html" class="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Services</a>
+                    <a href="bharatvolt_marketplace.html" class="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Marketplace</a>
+                    <a href="bharatvolt_about.html" class="text-sm font-medium text-primary-600 dark:text-primary-400 transition">About</a>
+                    <a href="bharatvolt_resources.html" class="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Resources</a>
+                    <a href="bharatvolt_contact.html" class="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a>
+                </div>
+
+                <!-- Utilities -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <svg class="w-5 h-5 text-slate-700 dark:text-slate-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-slate-700 dark:text-slate-300 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <svg class="w-6 h-6 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
+            <div class="px-4 py-4 space-y-3">
+                <a href="bharatvolt_homepage.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Home</a>
+                <a href="bharatvolt_services.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Services</a>
+                <a href="bharatvolt_marketplace.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Marketplace</a>
+                <a href="bharatvolt_about.html" class="block py-2 text-sm font-medium text-primary-600 dark:text-primary-400">About</a>
+                <a href="bharatvolt_resources.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Resources</a>
+                <a href="bharatvolt_contact.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgb(148 163 184) 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center space-x-2 px-4 py-2 bg-primary-50 dark:bg-primary-950/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-6 border border-primary-200 dark:border-primary-800">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span>India's Most Trusted EV Battery Testing Consultancy</span>
+                </div>
+
+                <!-- Heading -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                    Building the Future of <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-400 dark:to-secondary-400">Battery Excellence</span>
+                </h1>
+
+                <!-- Subheading -->
+                <p class="text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-3xl mx-auto">
+                    We're transforming India's EV ecosystem by providing world-class battery testing services and connecting manufacturers with certified laboratories through our anonymous marketplace.
+                </p>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="metric-value text-primary-600 dark:text-primary-400">15+</div>
+                        <div class="metric-label">Years Combined Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="metric-value text-secondary-600 dark:text-secondary-400">50+</div>
+                        <div class="metric-label">Partner Laboratories</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="metric-value text-accent-600 dark:text-accent-400">1000+</div>
+                        <div class="metric-label">Projects Completed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="metric-value text-primary-600 dark:text-primary-400">24/7</div>
+                        <div class="metric-label">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Mission -->
+                <div class="data-card">
+                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Our Mission</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                        To accelerate India's electric vehicle revolution by providing accessible, transparent, and world-class battery testing services that ensure safety, performance, and compliance with international standards.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-700 dark:text-slate-300">Democratize access to certified battery testing</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-700 dark:text-slate-300">Protect intellectual property through anonymous matching</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-700 dark:text-slate-300">Enable Indian EV manufacturers to compete globally</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Vision -->
+                <div class="data-card">
+                    <div class="w-14 h-14 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Our Vision</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                        To become the definitive platform for battery testing excellence in Asia, setting the gold standard for transparency, confidentiality, and technical rigor in the EV industry.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-secondary-600 dark:text-secondary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-700 dark:text-slate-300">Expand to 100+ partner laboratories by 2027</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-secondary-600 dark:text-secondary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-700 dark:text-slate-300">Support 10,000+ battery testing projects annually</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-secondary-600 dark:text-secondary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-slate-700 dark:text-slate-300">Establish regional presence across South Asia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-t border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                    Our Core Values
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400">
+                    The principles that guide everything we do
+                </p>
+            </div>
+
+            <!-- Values Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="data-card group hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-950/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Confidentiality</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Your intellectual property is sacred. We ensure complete anonymity and data protection at every stage.
+                    </p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="data-card group hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 bg-secondary-100 dark:bg-secondary-950/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-secondary-600 dark:text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Quality Excellence</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        We partner only with laboratories meeting the highest international standards and certifications.
+                    </p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="data-card group hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 bg-accent-100 dark:bg-accent-950/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Innovation</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Pioneering the anonymous marketplace model and AI-driven lab matching for optimal results.
+                    </p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="data-card group hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-950/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Global Standards</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Adherence to UN 38.3, UL 2580, IEC, and all major international battery testing protocols.
+                    </p>
+                </div>
+
+                <!-- Value 5 -->
+                <div class="data-card group hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 bg-secondary-100 dark:bg-secondary-950/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-secondary-600 dark:text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Client Success</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Your success is our success. We go beyond matching to ensure project completion and satisfaction.
+                    </p>
+                </div>
+
+                <!-- Value 6 -->
+                <div class="data-card group hover:shadow-xl transition-all duration-300">
+                    <div class="w-12 h-12 bg-accent-100 dark:bg-accent-950/30 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Speed & Efficiency</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        24-48 hour matching, streamlined processes, and dedicated support to accelerate your time-to-market.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="py-20 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                    Leadership Team
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400">
+                    Industry veterans with deep expertise in battery technology and testing
+                </p>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="data-card group hover:shadow-xl transition-all duration-300 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-3xl font-bold">
+                        RS
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Dr. Rajesh Sharma</h3>
+                    <p class="text-primary-600 dark:text-primary-400 font-medium mb-3">Founder & CEO</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                        Ph.D. in Electrochemistry, 15+ years in battery R&D. Former lead scientist at ISRO's battery division.
+                    </p>
+                    <div class="flex items-center justify-center space-x-2 text-xs text-slate-500 dark:text-slate-500">
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">IIT Delhi</span>
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">MIT</span>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="data-card group hover:shadow-xl transition-all duration-300 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-3xl font-bold">
+                        PM
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Priya Menon</h3>
+                    <p class="text-secondary-600 dark:text-secondary-400 font-medium mb-3">CTO & Co-Founder</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                        Expert in testing automation & marketplace platforms. Former EV battery lead at Tata Motors.
+                    </p>
+                    <div class="flex items-center justify-center space-x-2 text-xs text-slate-500 dark:text-slate-500">
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">IIT Bombay</span>
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Stanford</span>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="data-card group hover:shadow-xl transition-all duration-300 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-accent-500 to-primary-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-3xl font-bold">
+                        AK
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Anil Kumar</h3>
+                    <p class="text-accent-600 dark:text-accent-400 font-medium mb-3">Head of Certifications</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                        20+ years in quality assurance and international standards. Led certification programs for Fortune 500 companies.
+                    </p>
+                    <div class="flex items-center justify-center space-x-2 text-xs text-slate-500 dark:text-slate-500">
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">ISO Lead Auditor</span>
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">NABL Expert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Accreditations -->
+    <section class="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 border-t border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                    Certifications & Recognition
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400">
+                    Our platform and partner laboratories maintain the highest industry standards
+                </p>
+            </div>
+
+            <!-- Certifications Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Cert 1 -->
+                <div class="bg-white dark:bg-slate-950 rounded-xl p-6 border border-slate-200 dark:border-slate-800 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-primary-100 dark:bg-primary-950/30 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-1">ISO 27001</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Information Security</p>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="bg-white dark:bg-slate-950 rounded-xl p-6 border border-slate-200 dark:border-slate-800 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-secondary-100 dark:bg-secondary-950/30 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-secondary-600 dark:text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-1">ISO 9001</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Quality Management</p>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="bg-white dark:bg-slate-950 rounded-xl p-6 border border-slate-200 dark:border-slate-800 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-accent-100 dark:bg-accent-950/30 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-1">GDPR Compliant</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Data Protection</p>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="bg-white dark:bg-slate-950 rounded-xl p-6 border border-slate-200 dark:border-slate-800 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-primary-100 dark:bg-primary-950/30 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-1">Startup India</h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">DPIIT Recognized</p>
+                </div>
+            </div>
+
+            <!-- Partner Standards -->
+            <div class="bg-white dark:bg-slate-950 rounded-2xl p-8 lg:p-10 border border-slate-200 dark:border-slate-800">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">
+                    Partner Laboratory Standards
+                </h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-medium text-sm">ISO/IEC 17025</span>
+                    <span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-medium text-sm">NABL Accredited</span>
+                    <span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-medium text-sm">UN 38.3 Certified</span>
+                    <span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-medium text-sm">UL 2580</span>
+                    <span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-medium text-sm">IEC 62133</span>
+                    <span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-medium text-sm">ECE R100</span>
+                    <span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-medium text-sm">AIS 048</span>
+                    <span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg font-medium text-sm">IS 16046</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-700 dark:to-secondary-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Ready to Work with India's Most Trusted Battery Testing Platform?
+            </h2>
+            <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+                Join 500+ manufacturers and 50+ laboratories who trust BharatVolt for their testing needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="bharatvolt_marketplace.html" class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-slate-100 text-primary-600 font-semibold rounded-lg transition shadow-lg">
+                    Explore Marketplace
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </a>
+                <a href="bharatvolt_contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-transparent hover:bg-white/10 text-white font-semibold rounded-lg transition border-2 border-white">
+                    Contact Us
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 dark:bg-black text-slate-300 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-white">BharatVolt</div>
+                            <div class="text-xs text-slate-400 -mt-1">Technologies</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        India's most trusted EV battery testing consultancy and anonymous marketplace platform.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="bharatvolt_homepage.html" class="hover:text-primary-400 transition">Home</a></li>
+                        <li><a href="bharatvolt_services.html" class="hover:text-primary-400 transition">Services</a></li>
+                        <li><a href="bharatvolt_marketplace.html" class="hover:text-primary-400 transition">Marketplace</a></li>
+                        <li><a href="bharatvolt_about.html" class="hover:text-primary-400 transition">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="bharatvolt_resources.html" class="hover:text-primary-400 transition">Standards & Regulations</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition">Technical Documentation</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition">Industry Insights</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="bharatvolt_contact.html" class="hover:text-primary-400 transition">Get Quote</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition">Support</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition">Partnerships</a></li>
+                        <li class="text-slate-400">info@bharatvolt.in</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-sm text-slate-400">
+                    © 2025 BharatVolt Technologies. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-sm text-slate-400">
+                    <a href="#" class="hover:text-primary-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-400 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-primary-400 transition">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
